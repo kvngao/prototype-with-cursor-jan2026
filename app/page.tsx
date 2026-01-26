@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className={`${styles.container} ${instrumentSans.className}`}>
       <header className={styles.header}>
-        <h1>Elizabeth's prototypes</h1>
+        <h1>Kevin's prototypes</h1>
       </header>
 
       <main>
