@@ -1,0 +1,19 @@
+---
+description: When I ask you to create a new prototype, make a new prototype, or something similar
+globs: 
+alwaysApply: false
+---
+When I ask you to...
+- Create a new prototype
+- Make a new prototype
+- Create prototype
+- Make prototype
+
+Or any other language similar to this. Do the following steps:
+
+1. If I don't tell you what the prototype will be, ask me to name the prototype before proceeding with creating the prototype.
+2. Always copy the `_template` directory in the `app/prototypes` directory. 
+3. Create/modify the prototype files (page.tsx, styles.module.css, etc.)
+4. Install any necessary dependencies
+5. Add the prototype to the homepage's prototypes array
+6. Test that both the prototype and homepage links work
