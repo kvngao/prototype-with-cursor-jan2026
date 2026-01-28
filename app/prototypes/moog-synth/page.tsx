@@ -21,7 +21,7 @@ export default function MoogSynthPrototype() {
   const [activeNotesVersion, setActiveNotesVersion] = useState(0);
   
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const audioContextRef = useRef<AudioContext | null>(null);
   const oscillatorsRef = useRef<Map<string, OscillatorNode>>(new Map());
   const gainNodesRef = useRef<Map<string, GainNode>>(new Map());
