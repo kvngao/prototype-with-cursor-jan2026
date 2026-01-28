@@ -1,0 +1,641 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  position: relative;
+  padding: 1.25rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.backButton {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 136, 0.1);
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  color: #00ff88;
+  text-decoration: none;
+  font-size: 1.5rem;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: rgba(0, 255, 136, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: 'Orbitron', monospace;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 136, 0.5),
+    0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.subtitle {
+  color: #888;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.synthPanel {
+  position: relative;
+  background: linear-gradient(135deg, #8b6f47 0%, #6b4f27 50%, #8b6f47 100%);
+  border: 4px solid #4a3a2a;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.topPanel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 2fr 1.1fr 1.4fr;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.topSection {
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(0, 255, 136, 0.22);
+  border-radius: 8px;
+  padding: 0.75rem;
+  min-width: 0;
+}
+
+.topSectionTitle {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 255, 136, 0.25);
+  padding-bottom: 0.35rem;
+}
+
+.topSectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.topGroup {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 255, 136, 0.12);
+  border-radius: 6px;
+  padding: 0.6rem;
+}
+
+.topLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(0, 255, 136, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.topKnobs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.bottomPanel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1.9fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.bottomLeft,
+.bottomRight {
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(0, 255, 136, 0.22);
+  border-radius: 8px;
+  padding: 0.75rem;
+  min-width: 0;
+}
+
+.bottomTitle {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.6rem 0;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 255, 136, 0.25);
+  padding-bottom: 0.35rem;
+}
+
+.outputRow {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 0.75rem;
+}
+
+.outputBlock,
+.masterBlock {
+  min-width: 0;
+}
+
+.woodGrain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 2px
+    );
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Legacy section layout removed in favor of top/bottom panels */
+
+
+.knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.knobBody {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff 0%, #ccc 50%, #666 100%);
+  border: 3px solid #333;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+  position: relative;
+  transition: transform 0.1s ease;
+}
+
+.knobBody:active {
+  cursor: grabbing;
+}
+
+.knobIndicator {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 11px;
+  background: #00ff88;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.8);
+}
+
+.knobLabel {
+  font-size: 0.62rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.knobValue {
+  font-size: 0.78rem;
+  color: #fff;
+  font-weight: 700;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.waveformSelector {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.waveButton {
+  padding: 0.35rem 0.55rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 4px;
+  color: #888;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+.waveButton:hover {
+  border-color: #00ff88;
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.waveButton.active {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+  color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.filterControls {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.adsr {
+  display: flex;
+  justify-content: center;
+}
+
+.sliderGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sliderLabel {
+  font-size: 0.8rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.sliderWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slider {
+  flex: 1;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #333;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #00ff88;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 136, 0.8),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 
+    0 0 15px rgba(0, 255, 136, 1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #00ff88;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 136, 0.8),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.sliderValue {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  color: #fff;
+  min-width: 50px;
+  text-align: right;
+  font-weight: 700;
+}
+
+.waveformDisplay {
+  background: #000;
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.canvas {
+  width: 100%;
+  height: 180px;
+  display: block;
+  background: #000;
+}
+
+.masterControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.playButton {
+  padding: 1rem 1.25rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 3px solid #00ff88;
+  border-radius: 8px;
+  color: #00ff88;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 136, 0.3),
+    inset 0 2px 4px rgba(0, 255, 136, 0.1);
+}
+
+.playButton:hover {
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 136, 0.6),
+    inset 0 2px 4px rgba(0, 255, 136, 0.2);
+  transform: scale(1.05);
+}
+
+.playButton:active {
+  transform: scale(0.98);
+}
+
+.playButton.playing {
+  background: rgba(0, 255, 136, 0.2);
+  box-shadow: 
+    0 0 40px rgba(0, 255, 136, 0.8),
+    inset 0 2px 4px rgba(0, 255, 136, 0.3);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 40px rgba(0, 255, 136, 0.8),
+      inset 0 2px 4px rgba(0, 255, 136, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 60px rgba(0, 255, 136, 1),
+      inset 0 2px 4px rgba(0, 255, 136, 0.5);
+  }
+}
+
+/* Keyboard */
+.keyboard {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.whiteKeys {
+  display: flex;
+  gap: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.whiteKey {
+  flex: 1;
+  height: 200px;
+  background: linear-gradient(to bottom, #fff 0%, #f5f5f5 100%);
+  border: 2px solid #333;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s ease;
+  box-shadow: 
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 0.65rem;
+  user-select: none;
+}
+
+.whiteKey:hover {
+  background: linear-gradient(to bottom, #f0f0f0 0%, #e5e5e5 100%);
+}
+
+.whiteKey.pressed {
+  background: linear-gradient(to bottom, #00ff88 0%, #00cc6a 100%);
+  transform: translateY(2px);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  border-color: #00ff88;
+}
+
+.blackKeys {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 130px;
+}
+
+.blackKey {
+  position: absolute;
+  width: 6.5%;
+  height: 130px;
+  background: linear-gradient(to bottom, #333 0%, #000 100%);
+  border: 2px solid #000;
+  border-radius: 0 0 6px 6px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  box-shadow: 
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 0.5rem;
+  user-select: none;
+}
+
+/* Position black keys between white keys */
+/* C# between C and D */
+.blackKey:nth-child(1) {
+  left: calc(7.7% - 3.25%);
+}
+
+/* D# between D and E */
+.blackKey:nth-child(2) {
+  left: calc(23.1% - 3.25%);
+}
+
+/* F# between F and G */
+.blackKey:nth-child(3) {
+  left: calc(53.85% - 3.25%);
+}
+
+/* G# between G and A */
+.blackKey:nth-child(4) {
+  left: calc(69.25% - 3.25%);
+}
+
+/* A# between A and B */
+.blackKey:nth-child(5) {
+  left: calc(84.6% - 3.25%);
+}
+
+.blackKey:hover {
+  background: linear-gradient(to bottom, #444 0%, #222 100%);
+}
+
+.blackKey.pressed {
+  background: linear-gradient(to bottom, #00ff88 0%, #00cc6a 100%);
+  transform: translateY(2px);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  border-color: #00ff88;
+}
+
+.keyLabel {
+  font-size: 0.62rem;
+  color: #666;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.whiteKey.pressed .keyLabel,
+.blackKey.pressed .keyLabel {
+  color: #000;
+}
+
+.blackKey .keyLabel {
+  color: #888;
+}
+
+.keyNote {
+  font-size: 0.55rem;
+  color: #999;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.whiteKey.pressed .keyNote,
+.blackKey.pressed .keyNote {
+  color: #000;
+}
+
+.blackKey .keyNote {
+  color: #666;
+}
+
+.keyboardHint {
+  text-align: center;
+  color: rgba(0, 255, 136, 0.6);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .synthPanel {
+    padding: 1.5rem;
+  }
+  
+  .oscillators {
+    grid-template-columns: 1fr;
+  }
+  
+  .filterControls {
+    gap: 2rem;
+  }
+  
+  .sliderGroup {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+.container {
+  min-height: 100vh;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Orbitron', monospace;
+  padding: 2rem;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(100, 150, 255, 0.05) 0%, rgba(255, 100, 150, 0.05) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.backButton {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(200, 200, 200, 0.2) 0%, rgba(150, 150, 150, 0.2) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(200, 200, 200, 0.3) 100%);
+  transform: scale(1.1);
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+
+.titleSection {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 6rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #c0c0c0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.chromeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Chrome Sculpture - Letter R */
+.chromeSculpture {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, 
+    #d0d0d0 0%, 
+    #ffffff 25%, 
+    #e8e8e8 50%, 
+    #c8c8c8 75%, 
+    #d8d8d8 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.letterR {
+  clip-path: polygon(
+    30% 10%, 70% 10%, 70% 25%, 50% 25%, 50% 35%, 65% 35%, 65% 50%, 50% 50%, 
+    50% 60%, 70% 60%, 70% 75%, 30% 75%, 30% 60%, 45% 60%, 45% 50%, 30% 50%, 
+    30% 35%, 45% 35%, 45% 25%, 30% 25%
+  );
+}
+
+.sculptureReflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(100, 150, 255, 0.3) 0%, transparent 50%),
+    linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+  mix-blend-mode: overlay;
+  animation: reflectionMove 8s ease-in-out infinite;
+}
+
+@keyframes reflectionMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, 20px) scale(1.1); }
+}
+
+.sculptureHighlight {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 40%;
+  height: 30%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: highlightPulse 3s ease-in-out infinite;
+}
+
+@keyframes highlightPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.chromeSculpture:hover {
+  transform: scale(1.05) rotateY(5deg);
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Chrome Buttons */
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chromeButton {
+  position: relative;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(135deg, 
+    #e0e0e0 0%, 
+    #ffffff 20%, 
+    #f0f0f0 40%, 
+    #d8d8d8 60%, 
+    #e8e8e8 80%, 
+    #ffffff 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.buttonReflection {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    transparent 100%);
+  transition: left 0.6s ease;
+}
+
+.chromeButton:hover .buttonReflection {
+  left: 100%;
+}
+
+.chromeButton:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.chromeButton:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.buttonText {
+  position: relative;
+  z-index: 1;
+  color: #000;
+  font-size: 1rem;
+}
+
+.buttonAlt {
+  background: linear-gradient(135deg, 
+    #c8d8f0 0%, 
+    #e8f0ff 20%, 
+    #d0e0f8 40%, 
+    #b8c8e8 60%, 
+    #d0d8f0 80%, 
+    #e0e8f8 100%);
+}
+
+.buttonAlt2 {
+  background: linear-gradient(135deg, 
+    #f0d8e8 0%, 
+    #fff0f8 20%, 
+    #f8e0f0 40%, 
+    #e8c8d8 60%, 
+    #f0d0e0 80%, 
+    #f8e8f0 100%);
+}
+
+/* Chrome Card */
+.chromeCard {
+  position: relative;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, 
+    #d8d8d8 0%, 
+    #ffffff 25%, 
+    #e8e8e8 50%, 
+    #d0d0d0 75%, 
+    #e0e0e0 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.cardReflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 40% 30%, rgba(255, 255, 255, 0.5) 0%, transparent 60%),
+    linear-gradient(45deg, transparent 0%, rgba(150, 200, 255, 0.2) 50%, transparent 100%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.chromeCard:hover {
+  transform: translateY(-5px) rotateX(2deg);
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.cardTitle {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #000;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cardText {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Chrome Panel */
+.chromePanel {
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(135deg, 
+    #e0e0e0 0%, 
+    #f8f8f8 25%, 
+    #e8e8e8 50%, 
+    #d8d8d8 75%, 
+    #f0f0f0 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.panelReflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.4) 0%, transparent 70%),
+    linear-gradient(135deg, transparent 0%, rgba(200, 220, 255, 0.2) 50%, transparent 100%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.chromePanel:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.panelContent {
+  position: relative;
+  z-index: 1;
+}
+
+.panelItem {
+  margin-bottom: 1.5rem;
+}
+
+.panelItem:last-child {
+  margin-bottom: 0;
+}
+
+.panelLabel {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.panelBar {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.panelBar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%);
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+.panelBarFill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, 
+    #4a90e2 0%, 
+    #5aa0f2 50%, 
+    #4a90e2 100%);
+  border-radius: 4px;
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: width 0.5s ease;
+}
+
+/* Info Section */
+.infoSection {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.infoText {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .chromeGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .chromeSculpture {
+    height: 300px;
+  }
+}

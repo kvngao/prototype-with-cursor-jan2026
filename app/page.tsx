@@ -15,6 +15,16 @@ export default function Home() {
       description: 'An interactive button that creates a colorful confetti explosion',
       path: '/prototypes/confetti-button'
     },
+    {
+      title: 'Chrome Reflective',
+      description: 'Y2K chrome aesthetic with mirror-finish surfaces and distorted reflections',
+      path: '/prototypes/chrome-reflective'
+    },
+    {
+      title: 'Moog Synthesizer',
+      description: '80s-inspired digital synthesizer with classic Moog-style controls',
+      path: '/prototypes/moog-synth'
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'Your new prototype',
